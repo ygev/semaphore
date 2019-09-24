@@ -1,1 +1,1 @@
-Test, Amanda do you read me?
+I hear you, Yana.
