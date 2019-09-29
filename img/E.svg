@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.6, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1"
+	 id="svg2" inkscape:version="0.43" sodipodi:docbase="C:\Documents and Settings\David Nelson\Archives\Svg" sodipodi:docname="Semaphore Echo.svg" sodipodi:version="0.32" xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://inkscape.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 600 430.3"
+	 style="enable-background:new 0 0 600 430.3;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
+	.st1{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;stroke:#FFFFFF;stroke-width:1;}
+	.st2{fill-rule:evenodd;clip-rule:evenodd;fill:#FCBB03;}
+	.st3{fill-rule:evenodd;clip-rule:evenodd;fill:#FD3E1D;}
+	.st4{fill-rule:evenodd;clip-rule:evenodd;fill:#FCBB03;fill-opacity:0;stroke:#FFFFFF;stroke-linejoin:round;}
+	.st5{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;stroke:#FFFFFF;}
+</style>
+<sodipodi:namedview  bordercolor="#666666" borderopacity="1.0" id="base" inkscape:current-layer="layer4" inkscape:cx="277.85308" inkscape:cy="238.30965" inkscape:document-units="px" inkscape:grid-points="true" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="540" inkscape:window-width="756" inkscape:window-x="378" inkscape:window-y="253" inkscape:zoom="0.5" pagecolor="#ffffff" showgrid="true">
+	</sodipodi:namedview>
+<g id="layer1" inkscape:groupmode="layer" inkscape:label="Head and Torso">
+	<path id="path7712" sodipodi:cx="250" sodipodi:cy="200" sodipodi:rx="25" sodipodi:ry="25" sodipodi:type="arc" class="st0" d="
+		M325,140.3c0,13.8-11.2,25-25,25s-25-11.2-25-25s11.2-25,25-25S325,126.5,325,140.3z"/>
+	<path id="rect7718" class="st0" d="M285,170.3h30c11,0,20,9.6,20,21.3V309c0,11.8-9,21.3-20,21.3h-30c-11,0-20-9.6-20-21.3V191.6
+		C265,179.9,274,170.3,285,170.3z"/>
+</g>
+<g id="layer4" inkscape:groupmode="layer" inkscape:label="Left Hand">
+	<g id="g11864">
+		<path id="rect7980" class="st0" d="M342.9,173.2l35.4-35.4c3.9-3.9,10.2-3.9,14.1,0l0,0c3.9,3.9,3.9,10.2,0,14.1l-35.4,35.4
+			c-3.9,3.9-10.2,3.9-14.1,0l0,0C339,183.5,339,177.1,342.9,173.2z"/>
+		
+			<rect id="rect7982" x="356.1" y="69.2" transform="matrix(0.7071 -0.7071 0.7071 0.7071 81.0787 344.2337)" class="st1" width="200" height="10"/>
+		<path id="path7986" class="st2" d="M530.3,134.4l-63.6-63.6l63.6-63.6L594,70.7L530.3,134.4z"/>
+		<path id="path7988" class="st3" d="M466.7,70.7l63.6-63.6L594,70.7H466.7z"/>
+		<path id="path11842" class="st4" d="M530.3,134.4l-63.6-63.6l63.6-63.6L594,70.7L530.3,134.4z"/>
+	</g>
+</g>
+<g id="layer5" inkscape:groupmode="layer" inkscape:label="Right Hand">
+	<g id="g12044">
+		<path id="rect7901" class="st0" d="M260,180.3v50c0,5.5-4.5,10-10,10l0,0c-5.5,0-10-4.5-10-10v-50c0-5.5,4.5-10,10-10l0,0
+			C255.5,170.3,260,174.8,260,180.3z"/>
+		<rect id="rect7903" x="245" y="230.3" class="st5" width="10" height="200"/>
+		<path id="path7907" class="st2" d="M345,340.3v90h-90v-90H345z"/>
+		<path id="path7909" class="st3" d="M345,430.3h-90v-90L345,430.3z"/>
+		<path id="path12001" class="st4" d="M345,340.3v90h-90v-90H345z"/>
+	</g>
+</g>
+</svg>
