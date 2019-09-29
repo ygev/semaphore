@@ -17,6 +17,17 @@ body {
   justify-content: space-between;
 }
 
+.logo {
+  z-index: -2;
+  padding-bottom: 15vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  bottom: 0;
+
+  /* ANIMATE */
+}
+
 .big-letter {
   z-index: -2;
   padding-bottom: 5vh;
@@ -35,10 +46,6 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-
-  /* ANIMATE */
-  -webkit-animation: mover 1s ease-in-out infinite alternate;
-  animation: mover 1s ease-in-out infinite alternate;
 }
 
 .waves {
@@ -50,7 +57,7 @@ body {
   position: absolute;
   width: 100%;
   bottom: 0vh;
-  padding-bottom: 10vh;
+  padding-bottom: 8vh;
   right: 0;
   z-index: -4;
 }
@@ -91,14 +98,33 @@ h2 {
   font-family: Noah;
   position: absolute;
   font-style: normal;
-  font-weight: 800;
-  font-size: 25px;
-  line-height: 31px;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 140%;
   margin-top: 10vh;
   display: flex;
   align-items: center;
   text-align: center;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.bye {
+  animation-name: bye, mover;
+  animation-duration: 2s, 1s;
+  animation-delay: 0ms, 2s; /* add this */
+  animation-timing-function: ease-in-out, ease-in-out;
+  animation-iteration-count: 1, infinite;
+  animation-direction: normal, alternate;
+}
+
+.mover {
+  -webkit-animation: mover 1s ease-in-out infinite alternate;
+  animation: mover 1s ease-in-out infinite alternate;
+}
+
+.correct {
+  -webkit-animation: correct 1s ease;
+  animation: correct 1s ease;
 }
 
 /* animations */
@@ -117,5 +143,23 @@ h2 {
   }
   100% {
     transform: translateY(50px);
+  }
+}
+
+@keyframes bye {
+  0% {
+    transform: translateY(-100px);
+  }
+  100% {
+    transform: translateY(1000px);
+  }
+}
+
+@keyframes correct {
+  30% {
+    background-color: #02bc58;
+  }
+  70% {
+    background-color: #02bc58;
   }
 }

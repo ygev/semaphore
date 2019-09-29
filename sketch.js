@@ -6,6 +6,8 @@ let lerpPosY = [];
 
 let diagramArray = [];
 
+let startTime;
+
 let leftAlphaAngle = [
   -135,
   -180,
@@ -97,11 +99,12 @@ let alphabet = [
 
 let gotPose = false;
 
-let startTime = 0;
-
 let ierror = 0;
 
 let i = Math.floor(Math.random() * 26);
+while (i == 14 || i == 22 || i == 23 || i == 25) {
+  i = Math.floor(Math.random() * 26);
+}
 
 function setup() {
   createCanvas(windowHeight * 1.4, windowHeight);
@@ -119,6 +122,7 @@ function modelLoaded() {
     imageScaleFactor: 1,
     minConfidence: 0.9
   };
+  startTime = second();
 }
 
 function gotPoses(poses) {
@@ -176,7 +180,12 @@ function draw(poses) {
   //print("right: " + rightAngle);
   //verifyAngle(leftAngle, leftAlphaAngle, rightAngle, rightAlphaAngle, 4);
 
-  let a = select(".big-letter");
+  let bigLetter = select(".big-letter");
+  let logo = select(".logo");
+  let instruction = select(".instruction");
+  let body = select("body");
+  print(body);
+
   if (
     verifyAngle(leftAngle, errorLeftAngle, rightAngle, errorRightAngle, ierror)
   ) {
@@ -184,16 +193,25 @@ function draw(poses) {
   }
   if (ierror >= 3) {
     print("game start");
+    logo.hide();
+    body.addClass("correct");
+    bigLetter.html(alphabet[i]);
 
-    a.html(alphabet[i]);
+    instruction.html("Strike a pose!");
     document.getElementById("diagram").src = "img/" + alphabet[i] + ".svg";
 
     if (
       verifyAngle(leftAngle, leftAlphaAngle, rightAngle, rightAlphaAngle, i)
     ) {
-      print(alphabet[i]);
+      var element = document.getElementById("back");
+      element.classList.remove("correct");
+      void element.offsetWidth; // trigger a DOM reflow
+      element.classList.add("correct");
 
       i = Math.floor(Math.random() * 26);
+      while (i == 14 || i == 22 || i == 23 || i == 25) {
+        i = Math.floor(Math.random() * 26);
+      }
     }
   }
 }
