@@ -5,7 +5,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.dom.min.js"></script>
     <script src="https://unpkg.com/ml5@0.3.1/dist/ml5.min.js"></script>
-
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -18,7 +17,7 @@
       <div class="sidebar">
        <div class="wrapper">
            <img id="diagram" src="/img/Start.gif">
-          <h2 class="instruction">Wave your arms to start learning Flag Signals!</h1>
+          <h2 class="instruction">Wave your arms to start learning Flag Signals. Get as many as you can in 20 seconds!</h1>
        </div>
          <div class="waves">
           <img src="/img/Wave3.png" class="wave-top"></img>
@@ -28,10 +27,26 @@
         </div>
           <img src="/img/Wave2.png" class="wave-mid"></img>
           <img src="/img/Wave1.png" class="wave-btm"></img>
-        </div>
-          
-          
+        </div>          
         </div>
       </div>
+     
+      <div class="gamify"><p><span id="countdowntimer">20</span>s</p>
+       <div class="scorecount">
+        <img src="/img/box.svg" alt="" class="flaggy">
+        <div class="countFlag">x 4</div>
+        </div>
+      </div>
+
   </body>
+
+<script type="text/javascript">
+    var timeleft = 20;
+    var downloadTimer = setInterval(function(){
+    timeleft--;
+    document.getElementById("countdowntimer").textContent = timeleft;
+    if(timeleft <= 0)
+        clearInterval(downloadTimer);
+    },1000);
+</script>
 </html>

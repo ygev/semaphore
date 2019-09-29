@@ -167,3 +167,53 @@ h2 {
     background: linear-gradient(360deg, #00b897 0%, #00800d 100%);
   }
 }
+
+/* TIMER */
+.gamify {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 2vw;
+    z-index: 30;
+}
+p {
+   position: relative;
+    
+    padding: 1vw;
+    background: rgba(19, 19, 19, 0.6);
+    border-radius: 100px;
+
+    font-family: Noah;
+    color: white;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 37px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+}
+
+.flaggy {
+    position: relative;
+    border: 4px white solid;
+}
+
+.scorecount {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1vw;
+    margin-left: 0.5vw;
+}
+
+.countFlag {
+    font-family: Noah;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 37px;
+    margin-left: 10px;
+    color:white;
+}
