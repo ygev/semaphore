@@ -134,8 +134,8 @@ function gotPoses(poses) {
       newPosX[i] = poses[0].pose.keypoints[i + 5].position.x;
       newPosY[i] = poses[0].pose.keypoints[i + 5].position.y;
 
-      posX[i] = lerp(newPosX[i], posX[i], 0.2);
-      posY[i] = lerp(newPosY[i], posY[i], 0.2);
+      posX[i] = lerp(newPosX[i], posX[i], 0.5);
+      posY[i] = lerp(newPosY[i], posY[i], 0.5);
     }
 
     gotPose = true;
@@ -158,7 +158,7 @@ function draw(poses) {
       ellipse(posX[i], posY[i], 20);
     }
     stroke(255);
-    strokeWeight(1);
+    strokeWeight(5);
 
     line(posX[9 - 5], posY[9 - 5], posX[7 - 5], posY[7 - 5]); //left wrist to elbow
     line(posX[7 - 5], posY[7 - 5], posX[5 - 5], posY[5 - 5]); //left elbow to shoulder
