@@ -1,49 +1,101 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-
 body {
-  line-height: 1;
+    background-color: #123363;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
 }
 
-ol, ul {
-  list-style: none;
+.p5Canvas {
+    position: relative;
 }
 
-blockquote, q {
-  quotes: none;
+
+.sidebar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-between
 }
 
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none;
+.big-letter {
+    z-index: -2;
+    margin: 10vh;
+    font-family: Noah;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 350px;
+    line-height: 437px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    bottom: 0;
+    /* text-shadow: 0px 4px 50px rgba(0, 0, 0, 0.5); */
+
+    /* GRADIENT */
+    background: -webkit-linear-gradient(#FF7A00, #E44512);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
+.waves {
+   z-index: -4;
+   position: relative;
+   
+}
+
+.wave-top {
+    position: absolute;
+    width: 100%;
+    bottom:0vh;
+    padding-bottom: 20vh;
+    right: 0;
+    z-index: -4;
+}
+
+.wave-mid {
+    position: absolute;
+    width: 100%;
+    padding-bottom: 2vh;
+    bottom: 0vh;
+    right: 0;
+    z-index: -3;
+}
+
+.wave-btm {
+    position: absolute;
+    width: 100%;
+    bottom:0;
+    right: 0;
+    z-index: 5;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    top: 0;
+    margin: 0 auto;
+}
+
+
+.diagram {
+    padding-top: 50px;
+    width: 200px; 
+}
+
+h2 {
+    font-family: Noah;
+    position: absolute;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 25px;
+    line-height: 31px;
+    margin-top: 10vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
 }

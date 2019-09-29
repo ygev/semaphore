@@ -53,8 +53,8 @@ function gotPoses(poses) {
       newPosX[i] = poses[0].pose.keypoints[i + 5].position.x;
       newPosY[i] = poses[0].pose.keypoints[i + 5].position.y;
 
-      posX[i] = lerp(newPosX[i], posX[i], 0.8);
-      posY[i] = lerp(newPosY[i], posY[i], 0.8);
+      posX[i] = lerp(newPosX[i], posX[i], 0.2);
+      posY[i] = lerp(newPosY[i], posY[i], 0.2);
     }
 
     gotPose = true;
