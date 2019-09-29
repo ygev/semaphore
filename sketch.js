@@ -117,6 +117,7 @@ function modelLoaded() {
     imageScaleFactor: 1,
     minConfidence: 0.9
   };
+  print(document.getElementsByClassName("diagram").src);
 }
 
 function gotPoses(poses) {
