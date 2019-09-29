@@ -112,7 +112,7 @@ let gotPose = false;
 let ierror = 0;
 
 let i = Math.floor(Math.random() * 26);
-while (i == 14 || i == 22 || i == 23 || i == 25) {
+while (i == 14 || i == 7 || i == 22 || i == 23 || i == 25) {
   i = Math.floor(Math.random() * 26);
 }
 
@@ -240,7 +240,7 @@ function draw(poses) {
       element.classList.add("correct");
 
       i = Math.floor(Math.random() * 26);
-      while (i == 14 || i == 22 || i == 23 || i == 25) {
+      while (i == 14 || i == 7 || i == 22 || i == 23 || i == 25) {
         i = Math.floor(Math.random() * 26);
       }
     } else if (timeleft == 0) {
