@@ -244,7 +244,6 @@ function draw(poses) {
         i = Math.floor(Math.random() * 26);
       }
     } else if (timeleft == 0) {
-      print("end");
       instruction.html("Congratulations! You got " + numCorrect + " signals");
       reset.show();
       bigLetter.hide();

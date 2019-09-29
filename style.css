@@ -61,7 +61,7 @@ body {
   position: absolute;
   width: 100%;
   bottom: 0vh;
-  padding-bottom: 8vh;
+  padding-bottom: 10vh;
   right: 0;
   z-index: -4;
 }
@@ -170,50 +170,79 @@ h2 {
 
 /* TIMER */
 .gamify {
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin: 2vw;
-    z-index: 30;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 2vw;
+  z-index: 30;
 }
 p {
-   position: relative;
-    
-    padding: 1vw;
-    background: rgba(19, 19, 19, 0.6);
-    border-radius: 100px;
+  position: relative;
 
-    font-family: Noah;
-    color: white;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 30px;
-    line-height: 37px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
+  padding: 1vw;
+  background: rgba(19, 19, 19, 0.6);
+  border-radius: 100px;
 
+  font-family: Noah;
+  color: white;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 37px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
 }
 
 .flaggy {
-    position: relative;
-    border: 4px white solid;
+  position: relative;
+  border: 4px white solid;
 }
 
 .scorecount {
-    display: flex;
-    flex-direction: row;
-    margin-top: 1vw;
-    margin-left: 0.5vw;
+  display: flex;
+  flex-direction: row;
+  margin-top: 1vw;
+  margin-left: 0.5vw;
 }
 
 .countFlag {
-    font-family: Noah;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 30px;
-    line-height: 37px;
-    margin-left: 10px;
-    color:white;
+  font-family: Noah;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 37px;
+  margin-left: 10px;
+  color: white;
+}
+
+.reset {
+  background: #ffffff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-family: Noah;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  margin-top: 530px;
+  position: absolute;
+  left: 0;
+  margin-left: 3.3vw;
+  color: #1d5fc3;
+  transition: 0.25s ease;
+}
+
+.reset:hover {
+  background: #00c87a;
+  color: white;
+}
+
+a {
+  text-decoration: none;
 }
