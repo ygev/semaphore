@@ -10,7 +10,7 @@ let startTime;
 
 var gameStarted;
 
-var timeleft = 20;
+var timeleft = 10;
 
 let numCorrect = 0;
 
@@ -244,9 +244,16 @@ function draw(poses) {
         i = Math.floor(Math.random() * 26);
       }
     } else if (timeleft == 0) {
-      instruction.html("Congratulations! You got " + numCorrect + " signals");
+      instruction.html(
+        "Congratulations!" + "<br>" + "You got " + numCorrect + " signals"
+      );
       reset.show();
       bigLetter.hide();
+      body.removeClass("blueBackground");
+      body.style(
+        "background",
+        "linear-gradient(360deg, #00b897 0%, #00800d 100%)"
+      );
     }
   } else {
     gameStarted = false;
