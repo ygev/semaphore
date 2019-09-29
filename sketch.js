@@ -18,6 +18,12 @@ console.log(gameStarted);
 
 let reset;
 
+let bigLetter;
+let logo;
+let instruction;
+let body;
+let countFlag;
+let countdowntimer;
 let leftAlphaAngle = [
   -135,
   -180,
@@ -125,8 +131,22 @@ function setup() {
 
   const poseNet = ml5.poseNet(video, modelLoaded);
   poseNet.on("pose", gotPoses);
+  bigLetter = select(".big-letter");
+  logo = select(".logo");
+  instruction = select(".instruction");
+  body = select("body");
+  countFlag = select(".countFlag");
   reset = select(".reset");
+  countdowntimer = select(".countdowntimer");
   reset.hide();
+
+  instruction.html(
+    "Wave your arms to start regaining your personal space. Get as many as you can in " +
+      timeleft +
+      " seconds!"
+  );
+  countFlag.html(numCorrect);
+  countdowntimer.html(timeleft);
 }
 
 function modelLoaded() {
@@ -193,12 +213,6 @@ function draw(poses) {
   //print("right: " + rightAngle);
   //verifyAngle(leftAngle, leftAlphaAngle, rightAngle, rightAlphaAngle, 4);
 
-  let bigLetter = select(".big-letter");
-  let logo = select(".logo");
-  let instruction = select(".instruction");
-  let body = select("body");
-  let countFlag = select(".countFlag");
-
   if (
     verifyAngle(leftAngle, errorLeftAngle, rightAngle, errorRightAngle, ierror)
   ) {
@@ -220,7 +234,7 @@ function draw(poses) {
       //console.log(deltaTime);
 
       timeleft -= 1 / frameCount;
-      document.getElementById("countdowntimer").textContent = round(timeleft);
+      countdowntimer.html(round(timeleft));
       if (timeleft <= 0) clearInterval(downloadTimer);
     }, 1000);
 
