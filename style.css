@@ -82,7 +82,7 @@ body {
   margin: 0 auto;
 }
 
-.diagram {
+#diagram {
   padding-top: 50px;
   width: 200px;
 }
