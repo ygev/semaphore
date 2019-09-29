@@ -8,6 +8,16 @@ let diagramArray = [];
 
 let startTime;
 
+var gameStarted;
+
+var timeleft = 20;
+
+let numCorrect = 0;
+
+console.log(gameStarted);
+
+let reset;
+
 let leftAlphaAngle = [
   -135,
   -180,
@@ -111,9 +121,12 @@ function setup() {
   video = createCapture(VIDEO);
   video.size(height * 1.4, height);
   video.hide();
+  frameRate(60); // Attempt to refresh at starting FPS
 
   const poseNet = ml5.poseNet(video, modelLoaded);
   poseNet.on("pose", gotPoses);
+  reset = select(".reset");
+  reset.hide();
 }
 
 function modelLoaded() {
@@ -184,7 +197,7 @@ function draw(poses) {
   let logo = select(".logo");
   let instruction = select(".instruction");
   let body = select("body");
-  print(body);
+  let countFlag = select(".countFlag");
 
   if (
     verifyAngle(leftAngle, errorLeftAngle, rightAngle, errorRightAngle, ierror)
@@ -192,17 +205,35 @@ function draw(poses) {
     ierror++;
   }
   if (ierror >= 3) {
-    print("game start");
+    //print("game start");
+    gameStarted = true;
     logo.hide();
+
     body.addClass("correct");
-    bigLetter.html(alphabet[i]);
+    if (bigLetter != null) {
+      bigLetter.html(alphabet[i]);
+    }
 
     instruction.html("Strike a pose!");
     document.getElementById("diagram").src = "img/" + alphabet[i] + ".svg";
+    var downloadTimer = setInterval(function() {
+      //console.log(deltaTime);
+
+      timeleft -= 1 / frameCount;
+      document.getElementById("countdowntimer").textContent = round(timeleft);
+      if (timeleft <= 0) clearInterval(downloadTimer);
+    }, 1000);
+
+    if (timeleft < 0) {
+      timeleft = 0;
+    }
 
     if (
-      verifyAngle(leftAngle, leftAlphaAngle, rightAngle, rightAlphaAngle, i)
+      verifyAngle(leftAngle, leftAlphaAngle, rightAngle, rightAlphaAngle, i) &&
+      timeleft > 0
     ) {
+      numCorrect++;
+      countFlag.html("x " + numCorrect);
       var element = document.getElementById("back");
       element.classList.remove("correct");
       void element.offsetWidth; // trigger a DOM reflow
@@ -212,7 +243,14 @@ function draw(poses) {
       while (i == 14 || i == 22 || i == 23 || i == 25) {
         i = Math.floor(Math.random() * 26);
       }
+    } else if (timeleft == 0) {
+      print("end");
+      instruction.html("Congratulations! You got " + numCorrect + " signals");
+      reset.show();
+      bigLetter.hide();
     }
+  } else {
+    gameStarted = false;
   }
 }
 

@@ -7,16 +7,22 @@
     <script src="https://unpkg.com/ml5@0.3.1/dist/ml5.min.js"></script>
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
+
+    <script src="timer.js"></script>
+    <script src="sketch.js"></script>
+
   </head>
 
   
 
   <body id="back" >
 
-      <script src="sketch.js"></script>
       <div class="sidebar">
        <div class="wrapper">
            <img id="diagram" src="/img/Start.gif">
+         <a href="index.html"><div class="reset mover">Play again</div>
+         </a>  
+
           <h2 class="instruction">Wave your arms to start learning Flag Signals. Get as many as you can in 20 seconds!</h1>
        </div>
          <div class="waves">
@@ -24,6 +30,7 @@
           <div class="wrapper">
           <img class="logo mover" src="/img/Logo.svg" alt="">
           <div class="big-letter mover" id="big-letter"></div>
+
         </div>
           <img src="/img/Wave2.png" class="wave-mid"></img>
           <img src="/img/Wave1.png" class="wave-btm"></img>
@@ -34,19 +41,11 @@
       <div class="gamify"><p><span id="countdowntimer">20</span>s</p>
        <div class="scorecount">
         <img src="/img/box.svg" alt="" class="flaggy">
-        <div class="countFlag">x 4</div>
+        <div class="countFlag">x 0</div>
         </div>
       </div>
 
   </body>
 
-<script type="text/javascript">
-    var timeleft = 20;
-    var downloadTimer = setInterval(function(){
-    timeleft--;
-    document.getElementById("countdowntimer").textContent = timeleft;
-    if(timeleft <= 0)
-        clearInterval(downloadTimer);
-    },1000);
-</script>
+
 </html>
