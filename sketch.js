@@ -4,6 +4,8 @@ let posY = [0, 0, 0, 0, 0, 0];
 let lerpPosX = [];
 let lerpPosY = [];
 
+let diagramArray = [];
+
 let leftAlphaAngle = [
   -135,
   -180,
@@ -19,7 +21,7 @@ let leftAlphaAngle = [
   -135,
   -135,
   -135,
-  -135,
+  -180,
   -180,
   -180,
   -180,
@@ -99,7 +101,7 @@ let startTime = 0;
 
 let ierror = 0;
 
-let i = 0;
+let i = Math.floor(Math.random() * 26);
 
 function setup() {
   createCanvas(windowHeight * 1.4, windowHeight);
@@ -117,7 +119,6 @@ function modelLoaded() {
     imageScaleFactor: 1,
     minConfidence: 0.9
   };
-  print(document.getElementsByClassName("diagram").src);
 }
 
 function gotPoses(poses) {
@@ -183,14 +184,16 @@ function draw(poses) {
   }
   if (ierror >= 3) {
     print("game start");
-    if (i < alphabet.length) {
-      a.html(alphabet[i]);
-    }
+
+    a.html(alphabet[i]);
+    document.getElementById("diagram").src = "img/" + alphabet[i] + ".svg";
+
     if (
       verifyAngle(leftAngle, leftAlphaAngle, rightAngle, rightAlphaAngle, i)
     ) {
       print(alphabet[i]);
-      i++;
+
+      i = Math.floor(Math.random() * 26);
     }
   }
 }
