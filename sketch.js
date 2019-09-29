@@ -278,7 +278,7 @@ function draw(poses) {
       if (attachGif == false) {
         print("here");
         print(document.getElementById("diagram").src);
-        document.getElementById("diagram").src = "/img/win.gif";
+        document.getElementById("diagram").src = "img/win.gif";
         print(document.getElementById("diagram").src);
         attachGif = true;
       }
