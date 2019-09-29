@@ -14,6 +14,8 @@ var timeleft = 10;
 
 let numCorrect = 0;
 
+let attachGif;
+
 console.log(gameStarted);
 
 let reset;
@@ -140,6 +142,8 @@ function setup() {
   countdowntimer = select(".countdowntimer");
   reset.hide();
 
+  attachGif = false;
+
   instruction.html(
     "Wave your arms to start regaining your personal space. Get as many as you can in " +
       timeleft +
@@ -229,7 +233,9 @@ function draw(poses) {
     }
 
     instruction.html("Strike a pose!");
-    document.getElementById("diagram").src = "img/" + alphabet[i] + ".svg";
+    if (attachGif == false) {
+      document.getElementById("diagram").src = "img/" + alphabet[i] + ".svg";
+    }
     var downloadTimer = setInterval(function() {
       //console.log(deltaTime);
 
@@ -261,13 +267,22 @@ function draw(poses) {
       instruction.html(
         "Congratulations!" + "<br>" + "You got " + numCorrect + " signals"
       );
+
       reset.show();
       bigLetter.hide();
       body.removeClass("blueBackground");
       body.style(
         "background",
-        "linear-gradient(360deg, #00b897 0%, #00800d 100%)"
+        "linear-gradient(360deg, #00b897 0%, #00800d 65%)"
       );
+      if (attachGif == false) {
+        print("here");
+        print(document.getElementById("diagram").src);
+        document.getElementById("diagram").src = "/img/win.gif";
+        print(document.getElementById("diagram").src);
+        attachGif = true;
+      }
+      print(document.getElementById("diagram").src);
     }
   } else {
     gameStarted = false;
