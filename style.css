@@ -32,10 +32,14 @@ body {
     bottom: 0;
 
     /* GRADIENT */
-    background: -webkit-linear-gradient(#FF7A00, #a02f00);
+    background: -webkit-linear-gradient(#FF8A00, #FF2E00);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+
+    /* ANIMATE */
+    -webkit-animation: mover 2s  infinite  alternate;
+    animation: mover 2s  infinite  alternate;
 }
 
 .waves {
@@ -99,4 +103,15 @@ h2 {
     align-items: center;
     text-align: center;
     color: rgba(255, 255, 255, 0.5);
+}
+
+/* animations */
+
+@-webkit-keyframes mover {
+    0% { transform: translateY(-20px); }
+    100% { transform: translateY(50px); }
+}
+@keyframes mover {
+    0% { transform: translateY(-20px); }
+    100% { transform: translateY(50px); }
 }
