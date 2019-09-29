@@ -93,7 +93,7 @@ function draw(poses) {
   //print("right: " + rightAngle);
   //verifyAngle(leftAngle, leftAlphaAngle, rightAngle, rightAlphaAngle, 4);
 
-  let a = select(".test");
+  let a = select(".big-letter");
   if (
     verifyAngle(leftAngle, errorLeftAngle, rightAngle, errorRightAngle, ierror)
   ) {
