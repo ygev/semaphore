@@ -1,3 +1,5 @@
+# Flag Semaphore or When You Need Personal Space
+
 ## Inspiration
 While browsing new JavaScript libraries to explore, Amanda and I ran into **PoseNet**, a machine learning model that allows for real-time human pose estimation. We started throwing out ideas, such as dancing games and even yoga poses until we came up with flag signaling, or **flag semaphore**, which is often used by the US Navy to communicate over long distances. We also thought about the idea of non-verbal communication and came up with the domain **whenyouneedpersonal.space** for our project, which alludes to the non-verbal and long-distance nature of flag signaling.
 
