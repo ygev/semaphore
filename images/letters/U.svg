@@ -1,0 +1,21 @@
+<svg width="600" height="431" viewBox="0 0 600 431" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M325 140.6C325 154.4 313.8 165.6 300 165.6C286.2 165.6 275 154.4 275 140.6C275 126.8 286.2 115.6 300 115.6C313.8 115.6 325 126.8 325 140.6Z" fill="#252525"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M285 170.6H315C326 170.6 335 180.2 335 191.9V309.3C335 321.1 326 330.6 315 330.6H285C274 330.6 265 321 265 309.3V191.9C265 180.2 274 170.6 285 170.6Z" fill="#252525"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M342.9 173.5L378.3 138.1C382.2 134.2 388.5 134.2 392.4 138.1C396.3 142 396.3 148.3 392.4 152.2L357 187.6C353.1 191.5 346.8 191.5 342.9 187.6C339 183.8 339 177.4 342.9 173.5Z" fill="#252525"/>
+<path d="M523.228 0.246531L381.808 141.667L388.879 148.738L530.299 7.31753L523.228 0.246531Z" fill="#252525" stroke="#252525"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M530.3 134.7L466.7 71.0998L530.3 7.49976L594 70.9998L530.3 134.7Z" fill="#FCBB03"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M466.7 70.9999L530.3 7.3999L594 70.9999H466.7Z" fill="#FD3E1D"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M530.3 134.7L466.7 71.0998L530.3 7.49976L594 70.9998L530.3 134.7Z" stroke="#252525" stroke-linejoin="round"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M242.9 187.7L207.6 152.3C203.7 148.4 203.7 142.1 207.6 138.2C211.5 134.3 217.8 134.3 221.7 138.2L257.1 173.6C261 177.5 261 183.8 257.1 187.7C253.2 191.6 246.8 191.6 242.9 187.7Z" fill="#252525"/>
+<path d="M76.7011 0.292282L69.6301 7.36328L211.05 148.783L218.121 141.712L76.7011 0.292282Z" fill="#252525" stroke="#252525"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M69.7 134.7L6 70.9997L69.7 7.39966L133.3 70.9997L69.7 134.7Z" fill="#FCBB03"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M6 70.9997L69.7 7.39966L133.3 70.9997H6Z" fill="#FD3E1D"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M69.7 134.7L6 70.9997L69.7 7.39966L133.3 70.9997L69.7 134.7Z" stroke="#252525" stroke-linejoin="round"/>
+</g>
+<defs>
+<clipPath id="clip0">
+<rect y="0.299805" width="600" height="430.3" fill="white"/>
+</clipPath>
+</defs>
+</svg>

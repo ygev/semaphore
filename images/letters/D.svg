@@ -1,0 +1,21 @@
+<svg width="600" height="500" viewBox="0 0 600 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M325 210C325 223.8 313.8 235 300 235C286.2 235 275 223.8 275 210C275 196.2 286.2 185 300 185C313.8 185 325 196.2 325 210Z" fill="#252525"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M285 240H315C326 240 335 249.6 335 261.3V378.6C335 390.4 326 399.9 315 399.9H285C274 399.9 265 390.3 265 378.6V261.3C265 249.6 274 240 285 240Z" fill="#252525"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M360 250V300C360 305.5 355.5 310 350 310C344.5 310 340 305.5 340 300V250C340 244.5 344.5 240 350 240C355.5 240 360 244.5 360 250Z" fill="#252525"/>
+<path d="M355 300H345V500H355V300Z" fill="#252525" stroke="#252525"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M255 410H345V500H255V410Z" fill="#FCBB03"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M345 410V500H255L345 410Z" fill="#FD3E1D"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M255 410H345V500H255V410Z" stroke="#252525" stroke-linejoin="round"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M240 250V200C240 194.5 244.5 190 250 190C255.5 190 260 194.5 260 200V250C260 255.5 255.5 260 250 260C244.5 260 240 255.5 240 250Z" fill="#252525"/>
+<path d="M255 0H245V200H255V0Z" fill="#252525" stroke="#252525"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M155 90V0H245V90H155Z" fill="#FCBB03"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M155 0H245V90L155 0Z" fill="#FD3E1D"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M155 90V0H245V90H155Z" stroke="#252525" stroke-linejoin="round"/>
+</g>
+<defs>
+<clipPath id="clip0">
+<rect width="600" height="500" fill="white"/>
+</clipPath>
+</defs>
+</svg>
