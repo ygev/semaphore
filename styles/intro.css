@@ -14,8 +14,6 @@
     align-items: center;
     align-content: center;
     justify-content: center;
-    /* height: 100vh; */
-    /* width: max-content; */
     position: relative;
 }
 
@@ -74,8 +72,8 @@
 }
 
 .intro__btn:hover ~ .intro__arrow {
-    left: 3vw;
-    transition: left 300ms ease-in-out;
+    left: -10vw;
+    transition: left 500ms ease-in-out;
 }
 
 
@@ -101,13 +99,12 @@
 }
 
 .intro__credits--link {
-    color: var(--white);
-    border-bottom: 1px solid var(--white);
+    color: rgb(184, 255, 255);
+    border-bottom: 1px solid rgb(184, 255, 255);
     transition: border 100ms ease-in-out;
 }
 
 .intro__credits--link:hover {
-    color: var(--white);
     font-style: normal;
     border-bottom: 1px solid var(--purple);
     transition: border 100ms ease-in-out;
