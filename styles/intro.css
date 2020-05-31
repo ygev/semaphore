@@ -48,6 +48,7 @@
     padding-top: 110px;
     padding-bottom: 110px;
     margin-bottom: 100px;
+    /* animation: floaty 3s linear infinite; */
 }
 
 .intro__logo {
@@ -55,6 +56,7 @@
     right: -15%;
     top: -5%;
     z-index: 1;
+    animation: floaty 2s linear infinite;
 }
 
 .intro__btn {
@@ -69,6 +71,7 @@
     bottom: 10%;
     position: absolute;
     transition: 250ms ease-in-out;
+    /* animation: floaty 4s linear infinite; */
 }
 
 .intro__btn:hover ~ .intro__arrow {
@@ -109,3 +112,12 @@
     border-bottom: 1px solid var(--purple);
     transition: border 100ms ease-in-out;
 }
+
+@keyframes floaty {
+    0%, 100% {
+      transform: translate(0);
+    }
+    50% {
+        transform: translate(0, 10px);
+    }
+  }
