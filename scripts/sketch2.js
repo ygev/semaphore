@@ -1,9 +1,3 @@
-let posX = [0, 0, 0, 0, 0, 0];
-let posY = [0, 0, 0, 0, 0, 0];
-
-let lerpPosX = [];
-let lerpPosY = [];
-
 let diagramArray = [];
 
 let startTime;
@@ -44,7 +38,7 @@ let leftAlphaAngle = [
   45,
   45,
   135,
-  -45
+  -45,
 ];
 let rightAlphaAngle = [
   -90,
@@ -72,7 +66,7 @@ let rightAlphaAngle = [
   0,
   -45,
   0,
-  0
+  0,
 ];
 
 let errorLeftAngle = [135, -135, 135, -135];
@@ -104,7 +98,7 @@ let alphabet = [
   "W",
   "X",
   "Y",
-  "Z"
+  "Z",
 ];
 
 let gotPose = false;
@@ -117,9 +111,9 @@ while (i == 14 || i == 22 || i == 23 || i == 25) {
 }
 
 function setup() {
-  createCanvas(windowHeight * 1.4, windowHeight);
+  createCanvas(windowHeight * 1.35, windowHeight);
   video = createCapture(VIDEO);
-  video.size(height * 1.4, height);
+  video.size(height * 1.35, height);
   video.hide();
   frameRate(60); // Attempt to refresh at starting FPS
 
@@ -133,7 +127,7 @@ function modelLoaded() {
   print("Model Loaded!");
   let options = {
     imageScaleFactor: 1,
-    minConfidence: 0.9
+    minConfidence: 0.9,
   };
   startTime = second();
 }
@@ -141,7 +135,7 @@ function modelLoaded() {
 function gotPoses(poses) {
   let options = {
     imageScaleFactor: 1,
-    minConfidence: 0.9
+    minConfidence: 0.9,
   };
 
   //print(poses);
@@ -216,7 +210,7 @@ function draw(poses) {
 
     instruction.html("Strike a pose!");
     document.getElementById("diagram").src = "imgOld/" + alphabet[i] + ".svg";
-    var downloadTimer = setInterval(function() {
+    var downloadTimer = setInterval(function () {
       //console.log(deltaTime);
 
       timeleft -= 1 / frameCount;
@@ -228,6 +222,7 @@ function draw(poses) {
       timeleft = 0;
     }
 
+    //master mind code
     if (
       verifyAngle(leftAngle, leftAlphaAngle, rightAngle, rightAlphaAngle, i) &&
       timeleft > 0
@@ -280,3 +275,16 @@ function getLeftAngle(posX, posY) {
 function getRightAngle(posX, posY) {
   return (Math.atan2(posY[1] - posY[5], posX[1] - posX[5]) * 180) / Math.PI;
 }
+
+function getRandLetter() {
+  let i = Math.floor(Math.random() * 26);
+  while (i == 14 || i == 22 || i == 23 || i == 25) {
+    i = Math.floor(Math.random() * 26);
+  }
+}
+
+letter_angle = {
+  A: [-135, -90],
+  B: [-180, -90],
+  C: [135, -90],
+};
