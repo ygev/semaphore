@@ -17,6 +17,18 @@ h2 {
     text-transform: uppercase;
 }
 
+h3 {
+    font-family: "Space Mono";
+    font-weight: 900;
+    font-size: 150px;
+}
+
+h4 {
+    font-family: "Space Mono";
+    font-weight: 900;
+    font-size: 90px;
+}
+
 a {
     text-decoration: none;
 }

@@ -1,3 +1,100 @@
 #defaultCanvas0 {
-  border-radius: 100px;
+}
+
+/* General */
+.game__wrapper {
+    background-color: var(--purple);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    justify-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+
+/* Webcam */
+.webcam__capture {
+    height: 40vw;
+    width: 70vw;
+    background-color: var(--white);
+    border-radius: var(--borderRadius);
+    box-shadow: var(--shadow);
+}
+
+/* Hint */
+
+.hint {
+    position: absolute;
+    height: 32vw;
+    width: 15vw;
+    left: 8vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    background-color: var(--white);
+    border-radius: 9090.91px;
+    box-shadow: var(--shadow);
+}
+
+.hint p {
+    font-weight: 900;
+}
+
+.hint__img {
+ height: 7vw;
+ margin-top: 32px;
+ margin-bottom: 32px;
+}
+
+
+/* Countdown */
+.countdown {
+    height: 10vw;
+    width: 10vw;
+    background-color: var(--white);
+    border-radius: var(--borderRadius);
+    box-shadow: var(--shadow);
+    z-index: 3;
+    position: absolute;
+    right: 10vw;
+    top:3vw;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.countdown__txt {
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 900;
+}
+
+/* Score */
+.score {
+    height: 5vw;
+    width: 10vw;
+    background-color: var(--white);
+    border-radius: var(--borderRadius);
+    box-shadow: var(--shadow);
+    z-index: 3;
+    position: absolute;
+    top: 4vw;
+    right: 22vw;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-left: 24px;
+    padding-right: 24px;
+    box-sizing: border-box;
+}
+
+.score__num {
+    font-size: 48px;
 }
