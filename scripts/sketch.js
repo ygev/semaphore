@@ -215,7 +215,7 @@ function draw(poses) {
     }
 
     instruction.html("Strike a pose!");
-    document.getElementById("diagram").src = "img/" + alphabet[i] + ".svg";
+    document.getElementById("diagram").src = "imgOld/" + alphabet[i] + ".svg";
     var downloadTimer = setInterval(function() {
       //console.log(deltaTime);
 

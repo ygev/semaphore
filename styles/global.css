@@ -1,0 +1,7 @@
+:root {
+  --purple: #6A4EE0;
+  --black: #252525;
+  --white: #fff;
+  --borderRadius: 20px;
+  --shadow: inset 0px 0px 0px 7px var(--black), 12px 12px 0px var(--black);
+}

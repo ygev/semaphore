@@ -1,51 +1,26 @@
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>pose match</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.dom.min.js"></script>
-    <script src="https://unpkg.com/ml5@0.3.1/dist/ml5.min.js"></script>
-    <link rel="stylesheet" href="reset.css" />
-    <link rel="stylesheet" href="style.css" />
-
-    <script src="timer.js"></script>
-    <script src="sketch.js"></script>
-
-  </head>
-
-  
-
-  <body id="back" >
-
-      <div class="sidebar">
-       <div class="wrapper">
-           <img id="diagram" src="/img/Start.gif">
-         <a href="index.html"><div class="reset mover">Play again</div>
-         </a>  
-
-          <h2 class="instruction">Wave your arms to start learning Flag Signals. Get as many as you can in 20 seconds!</h1>
-       </div>
-         <div class="waves">
-          <img src="/img/Wave3.png" class="wave-top"></img>
-          <div class="wrapper">
-          <img class="logo mover" src="/img/Logo.svg" alt="">
-          <div class="big-letter mover" id="big-letter"></div>
-
-        </div>
-          <img src="/img/Wave2.png" class="wave-mid"></img>
-          <img src="/img/Wave1.png" class="wave-btm"></img>
-        </div>          
-        </div>
-      </div>
-     
-      <div class="gamify"><p><span id="countdowntimer">20</span>s</p>
-       <div class="scorecount">
-        <img src="/img/box.svg" alt="" class="flaggy">
-        <div class="countFlag">x 0</div>
-        </div>
-      </div>
-
-  </body>
-
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Say No More: Semaphore!</title>
+  <link rel="stylesheet" href="styles/reset.css" />
+  <link rel="stylesheet" href="styles/global.css" />
+  <link rel="stylesheet" href="styles/type.css" />
+  <link rel="stylesheet" href="styles/intro.css" />
+  <script src="scripts/timer.js"></script>
+  <script src="scripts/sketch.js"></script>
+</head>
+<body class="intro__body">
+  <main class="intro">
+    <img src="/images/logo.svg" alt="" class="intro__logo">
+    <div class="intro__txt">
+      <h1 class="intro__lead">Say No More: Semaphore!</h1>
+      <p class="intro__paragraph">Social distancing? Say no more! Learn to use semaphore, a long distance language that uses body poses and hand-held flags. Start the game, step away from your computer and try to recreate as many poses as you can!</p>
+    </div>
+    <a href="" class="intro__btn"><h2 class="intro__btn--txt">Start Game</h2></a>
+    <p class="intro__credits">Brought to you by <a href="" class="intro__credits--link">Amanda Yeh</a> and <a href="" class="intro__credits--link">Yana Gevorgyan</a></p>
+    <img src="/images/arrow--intro.svg" alt="" class="intro__arrow">
+  </main>
+</body>
 </html>
