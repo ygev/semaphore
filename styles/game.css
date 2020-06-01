@@ -41,11 +41,13 @@
 }
 
 .hint p {
-    font-weight: 900;
+    font-weight: 300;
+    font-size: 18px;
+    font-style: italics;
 }
 
 .hint__img {
- height: 7vw;
+ height: 11vw;
  margin-top: 32px;
  margin-bottom: 32px;
 }
