@@ -1,4 +1,10 @@
 #defaultCanvas0 {
+    height: 40vw;
+    width: 70vw;
+    background-color: var(--white);
+    border: 7px solid var(--black);
+    border-radius: var(--borderRadius);
+    box-shadow: var(--shadow);
 }
 
 /* General */
