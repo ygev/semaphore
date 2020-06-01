@@ -8,7 +8,7 @@ let gotPose = false;
 
 let gameStart = false;
 
-let timerValue;
+let timerValue, previousLetter;
 
 let wave = 0;
 
@@ -18,18 +18,41 @@ let videoWidth, videoHeight;
 
 let firstHint, secondHint;
 
-let previousLetter = 1;
 ///angle of waving. first number is left, second number is right
 wave_angle = {
-  up: [135, 45],
+  up: [-180, 0],
   down: [-135, -45],
 };
 
 //angle of letter. first number is left, second number is right
 letter_angle = {
-  A: [-135, -90],
-  B: [180, -90],
-  C: [135, -90],
+  A: [-90, -45],
+  B: [-90, 0],
+  C: [-90, 45],
+  D: [-90, 90],
+  E: [135, -90],
+  F: [-180, -90],
+  G: [-135, -90],
+  H: [-45, 0],
+  I: [-45, 45],
+
+  J: [-180, 90],
+  K: [90, -45],
+  L: [135, -45],
+  M: [-180, -45],
+  N: [-135, -45],
+  O: [45, 0],
+  P: [90, 0],
+  Q: [135, 0],
+  R: [-180, 0],
+  S: [-135, 0],
+  T: [90, 45],
+  U: [135, 45],
+  V: [-135, 90],
+  W: [-180, 135],
+  X: [-135, 135],
+  Y: [-180, 45],
+  Z: [-180, -135],
 };
 
 function setup() {
@@ -105,7 +128,6 @@ function draw(poses) {
       randomLetter = getRandomLetter(letter_angle);
 
       while (randomLetter == previousLetter) {
-        print("same");
         randomLetter = getRandomLetter(letter_angle);
       }
       print(randomLetter);
@@ -113,10 +135,6 @@ function draw(poses) {
     } //end the game once the timer runs to 0
     else if (gameStart == false) {
       handleEnd();
-    }
-    if (timerValue == 1) {
-      endArrow = select(".start-end__img");
-      endArrow.addClass("start-end__img-move");
     }
   }
 }
@@ -138,6 +156,10 @@ function drawDots() {
 
 //get user's current angle
 function getUserAngle() {
+  print(
+    "left: " +
+      (Math.atan2(posY[0] - posY[4], posX[0] - posX[4]) * 180) / Math.PI
+  );
   userLeftAngle =
     (Math.atan2(posY[0] - posY[4], posX[0] - posX[4]) * 180) / Math.PI;
   userRightAngle =
@@ -150,10 +172,10 @@ function getUserAngle() {
 function verifyAngle(userAngle, correctAngle) {
   marginError = 10;
   if (
-    userAngle[0] > correctAngle[0] - 10 &&
-    userAngle[0] < correctAngle[0] + 10 &&
-    userAngle[1] > correctAngle[1] - 10 &&
-    userAngle[1] < correctAngle[1] + 10
+    userAngle[0] > correctAngle[0] - marginError &&
+    userAngle[0] < correctAngle[0] + marginError &&
+    userAngle[1] > correctAngle[1] - marginError &&
+    userAngle[1] < correctAngle[1] + marginError
   ) {
     return true;
   } else {
@@ -179,7 +201,7 @@ function waveStart() {
     gameStart = true;
     print("start");
     wave = 4;
-    timerValue = 15;
+    timerValue = 12;
 
     randomLetter = getRandomLetter(letter_angle);
   }
@@ -217,8 +239,20 @@ function getRandomLetter(obj) {
 }
 
 function handleEnd() {
+  endArrow = select(".start-end__img");
+  endArrow.addClass("start-end__img-move");
+
+  uiScore = select(".score");
+  uiTimer = select(".countdown");
+
+  uiScore.addClass("score-end");
+  uiTimer.addClass("countdown-end");
+
+  uiInfo = select(".info");
+  uiInfo.addClass("info-end");
+
   endCard = select(".hint-end");
-  endCard.addClass("hint-mid");
+  endCard.addClass("hint-end-mid");
 
   finalScore = select(".hint__final-score");
   if (numCorrect < 10) {
