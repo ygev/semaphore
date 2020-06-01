@@ -1,28 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Say No More: Semaphore! is a learning game for learning flag communication. It uses the poseNet() API and ml5 to test your poses against semaphore presets.">
-  <title>Say No More: Semaphore!</title>
-  <link rel="stylesheet" href="styles/reset.css" />
-  <link rel="stylesheet" href="styles/global.css" />
-  <link rel="stylesheet" href="styles/type.css" />
-  <link rel="stylesheet" href="styles/intro.css" />
-  <link rel="icon" href="favicon.png" type="image/x-icon" />
-  <script src="scripts/timer.js"></script>
-  <script src="scripts/sketch.js"></script>
-</head>
-<body class="intro__body">
-  <main class="intro">
-    <img src="/images/logo.svg" alt="" class="intro__logo">
-    <div class="intro__txt">
-      <h1 class="intro__lead">Say No More: Semaphore!</h1>
-      <p class="intro__paragraph">Social distancing? Say no more! Learn to use semaphore, a long distance language that uses body poses and hand-held flags. Start the game, step away from your computer and try to recreate as many poses as you can!</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Say No More: Semaphore! is a learning game for learning flag communication. It uses the poseNet() API and ml5 to test your poses against semaphore presets."
+    />
+    <title>Say No More: Semaphore!</title>
+    <link rel="stylesheet" href="styles/reset.css" />
+    <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="styles/type.css" />
+    <link rel="stylesheet" href="styles/intro.css" />
+    <link rel="icon" href="favicon.png" type="image/x-icon" />
+    <script src="scripts/timer.js"></script>
+    <script src="scripts/sketch.js"></script>
+  </head>
+  <body class="intro__body">
+    <main class="intro">
+      <img src="/images/logo.svg" alt="" class="intro__logo" />
+      <div class="intro__txt">
+        <h1 class="intro__lead">Say No More: Semaphore!</h1>
+        <p class="intro__paragraph">
+          Social distancing? Say no more! Learn to use semaphore, a long
+          distance language that uses body poses and hand-held flags. Start the
+          game, step away from your computer and try to recreate as many poses
+          as you can!
+        </p>
+      </div>
+      <a href="game.html" class="intro__btn"
+        ><h2 class="intro__btn--txt">Start Game</h2></a
+      >
+      <p class="intro__credits">
+        Brought to you by
+        <a
+          rel="noopener noreferrer"
+          target="_blank"
+          href="https://amandayeh.com"
+          class="intro__credits--link"
+          >Amanda Yeh</a
+        >
+        and
+        <a
+          rel="noopener noreferrer"
+          target="_blank"
+          href="https://www.yg.is"
+          class="intro__credits--link"
+          >Yana Gevorgyan</a
+        >
+      </p>
+      <img src="/images/arrow--intro.svg" alt="" class="intro__arrow" />
+    </main>
+    <!-- Mobile content -->
+    <div class="mobile">
+      <div class="mobile__content">
+        <img src="/images/logo.svg" alt="" class="mobile__logo" />
+
+        <div class="mobile__card">
+          <h4 class="mobile__card__text">
+            Say No More: Semaphore!
+            <span class="mobile__card__text__inst"
+              >is best played on a computer.</span
+            >
+          </h4>
+        </div>
+        <p class="mobile__content__email">
+          <a
+            rel="noopener noreferrer"
+            target="_blank"
+            href="mailto:name@mail.com?subject=The%20subject&body=This%20is%20a%20message%20body"
+            class="intro__credits--link"
+            >Email Link To Play Later</a
+          >
+        </p>
+      </div>
     </div>
-    <a href="game.html" class="intro__btn"><h2 class="intro__btn--txt">Start Game</h2></a>
-    <p class="intro__credits">Brought to you by <a rel="noopener noreferrer" target="_blank" href="https://amandayeh.com" class="intro__credits--link">Amanda Yeh</a> and <a rel="noopener noreferrer" target="_blank" href="https://www.yg.is" class="intro__credits--link">Yana Gevorgyan</a></p>
-    <img src="/images/arrow--intro.svg" alt="" class="intro__arrow">
-  </main>
-</body>
+  </body>
 </html>

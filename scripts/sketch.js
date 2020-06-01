@@ -10,7 +10,7 @@ let gameStart = false;
 
 let timerValue, previousLetter;
 
-let wave = 0;
+let wave = 1;
 
 let numCorrect = 0;
 
@@ -70,7 +70,6 @@ function setup() {
 }
 
 function modelLoaded() {
-  print("Model Loaded!");
   let options = {
     imageScaleFactor: 1,
     minConfidence: 0.9,
@@ -114,13 +113,13 @@ function draw(poses) {
   if (gotPose == true) {
     drawDots();
   }
-  waveStart();
+  waveStart(3);
   if (gameStart == true) {
     countDown();
     initDom();
 
     if (
-      verifyAngle(getUserAngle(), letter_angle[randomLetter]) &&
+      verifyAngle(getUserAngle(), letter_angle[randomLetter], 10) &&
       timerValue > 0
     ) {
       numCorrect++; //increase score count
@@ -130,7 +129,6 @@ function draw(poses) {
       while (randomLetter == previousLetter) {
         randomLetter = getRandomLetter(letter_angle);
       }
-      print(randomLetter);
       gameDom();
     } //end the game once the timer runs to 0
     else if (gameStart == false) {
@@ -156,10 +154,6 @@ function drawDots() {
 
 //get user's current angle
 function getUserAngle() {
-  print(
-    "left: " +
-      (Math.atan2(posY[0] - posY[4], posX[0] - posX[4]) * 180) / Math.PI
-  );
   userLeftAngle =
     (Math.atan2(posY[0] - posY[4], posX[0] - posX[4]) * 180) / Math.PI;
   userRightAngle =
@@ -169,8 +163,7 @@ function getUserAngle() {
 }
 
 //verify angle: [0] is left, [1] is right
-function verifyAngle(userAngle, correctAngle) {
-  marginError = 10;
+function verifyAngle(userAngle, correctAngle, marginError) {
   if (
     userAngle[0] > correctAngle[0] - marginError &&
     userAngle[0] < correctAngle[0] + marginError &&
@@ -184,25 +177,17 @@ function verifyAngle(userAngle, correctAngle) {
 }
 
 //start game by waving
-function waveStart() {
-  if (verifyAngle(getUserAngle(), wave_angle["up"]) && wave == 0) {
-    wave = 1;
-    print("1");
+function waveStart(numWave) {
+  if (verifyAngle(getUserAngle(), wave_angle["up"], 25) && wave % 2 == 1) {
+    wave++;
   }
-  if (verifyAngle(getUserAngle(), wave_angle["down"]) && wave == 1) {
-    wave = 2;
-    print("2");
+  if (verifyAngle(getUserAngle(), wave_angle["down"], 25) && wave % 2 == 0) {
+    wave++;
   }
-  if (verifyAngle(getUserAngle(), wave_angle["up"]) && wave == 2) {
-    wave = 3;
-    print("3");
-  }
-  if (wave == 3) {
+  if (wave == numWave) {
     gameStart = true;
-    print("start");
-    wave = 4;
+    wave++;
     timerValue = 12;
-
     randomLetter = getRandomLetter(letter_angle);
   }
 }
@@ -218,15 +203,12 @@ function timeIt() {
 function countDown() {
   let timerText = select(".countdown__num");
   if (timerValue >= 10) {
-    print("0:" + timerValue);
     timerText.html(timerValue);
   }
   if (timerValue < 10) {
-    print("0:0" + timerValue);
     timerText.html("0" + timerValue);
   }
   if (timerValue == 0) {
-    print("game over");
     gameStart = false;
     timerText.html("0" + timerValue);
   }

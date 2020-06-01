@@ -1,0 +1,40 @@
+@media screen and (max-width: 1050px) {
+  .mobile {
+    display: block;
+    color: var(--black);
+  }
+  .intro {
+    display: none;
+  }
+
+  .mobile__logo {
+    display: absolute;
+    width: 20vw;
+    transform: translate(25vw, 6vh);
+  }
+
+  .mobile__content {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobile__card {
+    background-color: var(--white);
+    border-radius: var(--borderRadius);
+    box-shadow: var(--shadow);
+    margin-left: 7vw;
+    margin-right: 8vw;
+    padding: 8vw 7vw;
+  }
+
+  .mobile__card__text__inst {
+    font-weight: 400;
+  }
+
+  .mobile__content__email {
+    padding-top: 60px;
+  }
+}

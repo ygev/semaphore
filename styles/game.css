@@ -1,11 +1,17 @@
 body {
   overflow-y: hidden;
 }
+
+.mobile {
+  display: none;
+  position: absolute;
+  z-index: 20;
+}
 /* Webcam */
 #defaultCanvas0 {
   /* height: 40vw;
     width: 70vw; */
-    z-index: -1;
+  z-index: -1;
   background-color: var(--white);
   border: 7px solid var(--black);
   border-radius: var(--borderRadius);
@@ -13,11 +19,11 @@ body {
   animation: canvasShow 1s ease-in-out forwards;
 }
 
-@keyframes canvasShow  {
-  0%{
+@keyframes canvasShow {
+  0% {
     opacity: 0;
   }
-  100%{
+  100% {
     opacity: 1;
   }
 }
@@ -32,8 +38,7 @@ body {
   justify-items: center;
   height: 100vh;
   position: relative;
-  color: var(--black);    <img src="/images/correct.svg" alt="" class="correct__img" />
-
+  color: var(--black);
 }
 
 /* Hint */
@@ -66,8 +71,8 @@ body {
   transition: 1s cubic-bezier(0.85, 0, 0.15, 1);
 }
 
-.hint-end{
-    top: 100vh;
+.hint-end {
+  top: 100vh;
 }
 
 .hint-end-mid {
@@ -75,27 +80,25 @@ body {
   animation-delay: 1s;
 }
 
-
 @keyframes midToToptoBottm {
-    0% {
-      top: 22vh;
-    }
-    100% {
-      top: -58vh;
-    }
+  0% {
+    top: 22vh;
   }
-  
-  @keyframes bttmToMid {
-    0% {
-      top: 100vh;
-    }
-  
-    100% {
-      top: 22vh;
-    }
+  100% {
+    top: -58vh;
+  }
+}
+
+@keyframes bttmToMid {
+  0% {
+    top: 100vh;
   }
 
-  
+  100% {
+    top: 22vh;
+  }
+}
+
 .hint p {
   font-weight: 300;
   font-size: 18px;
@@ -127,26 +130,30 @@ body {
   animation: topToTopShow 1s cubic-bezier(0.85, 0, 0.15, 1) forwards;
 }
 
+.countdown__num {
+  line-height: 100%;
+}
+
 .countdown-end {
   animation: topToTop 1s cubic-bezier(0.85, 0, 0.15, 1) forwards;
   animation-delay: 1.5s;
 }
 
-@keyframes topToTop{
+@keyframes topToTop {
   0% {
     top: 3vh;
   }
   100% {
-    top:-13vw;
+    top: -13vw;
   }
 }
 
 @keyframes topToTopShow {
-  0%{
-    top:-13vw;
+  0% {
+    top: -13vw;
   }
-  100%{
-    top:3vw;
+  100% {
+    top: 3vw;
   }
 }
 
@@ -177,7 +184,7 @@ body {
   animation: topToTopShow 1s cubic-bezier(0.85, 0, 0.15, 1) forwards;
 }
 
-.score-end{
+.score-end {
   animation: topToTop 1s cubic-bezier(0.85, 0, 0.15, 1) forwards;
   animation-delay: 1.5s;
 }
@@ -191,57 +198,58 @@ body {
   z-index: -10;
   width: 100vw;
   height: auto;
+  left: 0;
 }
 
-.correct__img-init{
-    top:100vh;
+.correct__img-init {
+  top: 100vh;
 }
 
-.correct__img-moveUp{
-    animation: correctMoveUp 2s ease-in-out forwards;;
+.correct__img-moveUp {
+  animation: correctMoveUp 2s ease-in-out forwards;
 }
 
 @keyframes correctMoveUp {
-    0%{
-        top: 100vh;
-    }
-    100% {
-        top: -550vw;
-    }
+  0% {
+    top: 100vh;
+  }
+  100% {
+    top: -550vw;
+  }
 }
 
-.start-end__img{
-    position: absolute;
-    z-index: 5;
-    height:100vh;
-    width: auto;
-    left:-240vw;
+.start-end__img {
+  position: absolute;
+  z-index: 5;
+  height: 100vh;
+  width: auto;
+  left: -240vw;
+  top: 0;
 }
 
-.start-end__img-move{
-    animation: startMoveRight 2s ease-in-out forwards;;
+.start-end__img-move {
+  animation: startMoveRight 2s ease-in-out forwards;
 }
 
-@keyframes startMoveRight{
-    0%{
-        left:-240vw;
-    }
-    100%{
-        left:100vw;
-    }
+@keyframes startMoveRight {
+  0% {
+    left: -240vw;
+  }
+  100% {
+    left: 100vw;
+  }
 }
 
-
-.info{
+.info {
   background-color: var(--white);
   position: absolute;
   bottom: -500px;
-  width:500px;
-  height:200px;
-  right: 8vw;  
+  width: 500px;
+  height: 200px;
+  right: 8vw;
 }
 
-.info-end{
+.info-end {
   animation: bttmTobttm 1s cubic-bezier(0.85, 0, 0.15, 1) forwards;
   animation-delay: 1.5s;
 }
@@ -249,12 +257,65 @@ body {
 @keyframes bttmTobttm {
   0% {
     bottom: -500px;
-
   }
   100% {
-    bottom:3vh;
-
+    bottom: 3vh;
   }
-  
 }
 
+@media screen and (max-width: 1050px) {
+  .mobile {
+    display: block;
+    color: var(--black);
+  }
+  .game__main {
+    display: none;
+  }
+
+  #defaultCanvas0 {
+    display: none;
+  }
+
+  .mobile__logo {
+    display: absolute;
+    width: 20vw;
+    transform: translate(25vw, 6vh);
+  }
+
+  .mobile__content {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobile__card {
+    background-color: var(--white);
+    border-radius: var(--borderRadius);
+    box-shadow: var(--shadow);
+    margin-left: 7vw;
+    margin-right: 8vw;
+    padding: 8vw 7vw;
+  }
+
+  .mobile__card__text__inst {
+    font-weight: 400;
+  }
+
+  .mobile__content__email {
+    padding-top: 60px;
+  }
+
+  .intro__credits--link {
+    color: rgb(184, 255, 255);
+    border-bottom: 1px solid rgb(184, 255, 255);
+    transition: border 100ms ease-in-out;
+  }
+
+  .intro__credits--link:hover {
+    font-style: normal;
+    border-bottom: 1px solid var(--purple);
+    transition: border 100ms ease-in-out;
+  }
+}

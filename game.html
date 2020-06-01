@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="styles/global.css" />
     <link rel="stylesheet" href="styles/game.css" />
     <link rel="stylesheet" href="styles/type.css" />
-    <link rel="stylesheet" href="styles/intro.css" />
     <link rel="icon" href="favicon.png" type="image/x-icon" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.dom.min.js"></script>
@@ -21,64 +20,89 @@
     <script src="scripts/sketch.js"></script>
   </head>
   <body class="game__wrapper">
-    <!-- Hint SideBar -->
-    <aside class="hint hint-mid">
-      <p class="hint__toptxt hint__toptxt-mid">Wave Arms</p>
+    <div class="game__main">
+      <!-- Hint SideBar -->
+      <aside class="hint hint-mid">
+        <p class="hint__toptxt hint__toptxt-mid">Wave Arms</p>
+        <img
+          src="images/wave.gif"
+          alt=""
+          class="hint__img hint__img-mid"
+          id="img-1"
+        />
+        <p class="hint__bottomtxt hint__bottomtxt-mid">To Start</p>
+        <h3 class="hint__letter hint__letter-mid"></h3>
+      </aside>
+
+      <!-- Alphabet SideBar -->
+      <aside class="hint hint-bttm">
+        <p class="hint__toptxt hint__toptxt-bttm">Wave Arms</p>
+        <img
+          src="images/wave.gif"
+          alt=""
+          class="hint__img hint__img-bttm"
+          id="img-2"
+        />
+        <p class="hint__bottomtxt hint__bottomtxt-bttm">To Start</p>
+        <h3 class="hint__letter hint__letter-bttm">4</h3>
+      </aside>
+
+      <!-- Final Score Card -->
+      <aside class="hint hint-end">
+        <p class="hint__toptxt hint__toptxt-bttm">Final Score</p>
+
+        <h1 class="hint__bottomtxt hint__final-score">10</h1>
+        <h2>play again</h2>
+      </aside>
+
+      <!-- Score -->
+      <div class="score">
+        <img src="images/countup.svg" alt="" class="score__img" />
+        <h5 class="score__num">00</h5>
+      </div>
+
+      <!-- Countdown -->
+      <div class="countdown">
+        <p class="countdown__txt">Countdown</p>
+        <h4 class="countdown__num">20</h4>
+      </div>
+
+      <!-- Ending Info -->
+      <div class="info">
+        <p class="info__text">Say No More: Semaphore!</p>
+      </div>
+
+      <!-- Start, end and correct arrows -->
       <img
-        src="images/wave.gif"
+        src="/images/correct.svg"
         alt=""
-        class="hint__img hint__img-mid"
-        id="img-1"
+        class="correct__img correct__img-init"
       />
-      <p class="hint__bottomtxt hint__bottomtxt-mid">To Start</p>
-      <h3 class="hint__letter hint__letter-mid"></h3>
-    </aside>
-
-    <!-- Alphabet SideBar -->
-    <aside class="hint hint-bttm">
-      <p class="hint__toptxt hint__toptxt-bttm">Wave Arms</p>
-      <img
-        src="images/wave.gif"
-        alt=""
-        class="hint__img hint__img-bttm"
-        id="img-2"
-      />
-      <p class="hint__bottomtxt hint__bottomtxt-bttm">To Start</p>
-      <h3 class="hint__letter hint__letter-bttm">4</h3>
-    </aside>
-
-    <!-- Final Score Card -->
-    <aside class="hint hint-end">
-      <p class="hint__toptxt hint__toptxt-bttm">Final Score</p>
-
-      <h1 class="hint__bottomtxt hint__final-score">10</h1>
-      <h2>play again</h2>
-    </aside>
-
-    <!-- Score -->
-    <div class="score">
-      <img src="images/countup.svg" alt="" class="score__img" />
-      <h5 class="score__num">00</h5>
+      <img src="/images/start-end.svg" alt="" class="start-end__img" />
     </div>
 
-    <!-- Countdown -->
-    <div class="countdown">
-      <p class="countdown__txt">Countdown</p>
-      <h4 class="countdown__num">20</h4>
+    <div class="mobile">
+      <div class="mobile__content">
+        <img src="/images/logo.svg" alt="" class="mobile__logo" />
+
+        <div class="mobile__card">
+          <h4 class="mobile__card__text">
+            Say No More: Semaphore!
+            <span class="mobile__card__text__inst"
+              >is best played on a computer.</span
+            >
+          </h4>
+        </div>
+        <p class="mobile__content__email">
+          <a
+            rel="noopener noreferrer"
+            target="_blank"
+            href="mailto:name@mail.com?subject=The%20subject&body=This%20is%20a%20message%20body"
+            class="intro__credits--link"
+            >Email Link To Play Later</a
+          >
+        </p>
+      </div>
     </div>
-
-    <!-- Ending Info -->
-    <div class="info">
-      <p class="info__text">Say No More: Semaphore!</p>
-    </div>
-
-    <!-- Start, end and correct arrows -->
-    <img
-      src="/images/correct.svg"
-      alt=""
-      class="correct__img correct__img-init"
-    />
-
-    <img src="/images/start-end.svg" alt="" class="start-end__img" />
   </body>
 </html>
