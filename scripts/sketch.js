@@ -14,6 +14,8 @@ let wave = 0;
 
 let numCorrect = 0;
 
+let videoWidth, videoHeight;
+
 ///angle of waving. first number is left, second number is right
 wave_angle = {
   up: [135, 45],
@@ -30,7 +32,9 @@ letter_angle = {
 function setup() {
   createCanvas(windowHeight * 1.4, windowHeight * 0.8);
   video = createCapture(VIDEO);
-  video.size(width, height);
+  videoWidth = width;
+  videoHeight = width*0.75
+  video.size(videoWidth, videoHeight);
   video.hide();
   const poseNet = ml5.poseNet(video, modelLoaded);
   poseNet.on("pose", gotPoses);
@@ -78,7 +82,7 @@ function draw(poses) {
   push();
   translate(video.width, 0);
   scale(-1.0, 1.0);
-  image(video, 0, 0, width, height);
+  image(video, 0, 0, videoWidth, videoHeight);
 
   fill(255);
   //  noStroke();
