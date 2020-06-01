@@ -16,6 +16,9 @@ let numCorrect = 0;
 
 let videoWidth, videoHeight;
 
+let firstHint, secondHint;
+
+let previousLetter = 1;
 ///angle of waving. first number is left, second number is right
 wave_angle = {
   up: [135, 45],
@@ -33,7 +36,7 @@ function setup() {
   createCanvas(windowHeight * 1.4, windowHeight * 0.8);
   video = createCapture(VIDEO);
   videoWidth = width;
-  videoHeight = width*0.75
+  videoHeight = width * 0.75;
   video.size(videoWidth, videoHeight);
   video.hide();
   const poseNet = ml5.poseNet(video, modelLoaded);
@@ -78,33 +81,42 @@ function gotPoses(poses) {
 }
 
 function draw(poses) {
-  //flip the video to mirro user
   push();
   translate(video.width, 0);
   scale(-1.0, 1.0);
   image(video, 0, 0, videoWidth, videoHeight);
 
   fill(255);
-  //  noStroke();
+
   if (gotPose == true) {
     drawDots();
   }
   waveStart();
   if (gameStart == true) {
     countDown();
+    initDom();
 
-    //generate random letter and compare it to the user's current angle
     if (
       verifyAngle(getUserAngle(), letter_angle[randomLetter]) &&
       timerValue > 0
     ) {
       numCorrect++; //increase score count
+      previousLetter = randomLetter;
       randomLetter = getRandomLetter(letter_angle);
+
+      while (randomLetter == previousLetter) {
+        print("same");
+        randomLetter = getRandomLetter(letter_angle);
+      }
       print(randomLetter);
+      gameDom();
     } //end the game once the timer runs to 0
     else if (gameStart == false) {
-      print("game end");
-      print(numCorrect);
+      handleEnd();
+    }
+    if (timerValue == 1) {
+      endArrow = select(".start-end__img");
+      endArrow.addClass("start-end__img-move");
     }
   }
 }
@@ -167,9 +179,9 @@ function waveStart() {
     gameStart = true;
     print("start");
     wave = 4;
-    timerValue = 3;
+    timerValue = 15;
+
     randomLetter = getRandomLetter(letter_angle);
-    print(randomLetter);
   }
 }
 
@@ -182,20 +194,125 @@ function timeIt() {
 
 //display countdown and end game when countdown is 0
 function countDown() {
+  let timerText = select(".countdown__num");
   if (timerValue >= 10) {
     print("0:" + timerValue);
+    timerText.html(timerValue);
   }
   if (timerValue < 10) {
     print("0:0" + timerValue);
+    timerText.html("0" + timerValue);
   }
   if (timerValue == 0) {
     print("game over");
     gameStart = false;
+    timerText.html("0" + timerValue);
   }
 }
 
 //get a random letter in  letter_angle object
 function getRandomLetter(obj) {
-  var keys = Object.keys(obj);
+  let keys = Object.keys(obj);
   return keys[(keys.length * Math.random()) << 0];
+}
+
+function handleEnd() {
+  endCard = select(".hint-end");
+  endCard.addClass("hint-mid");
+
+  finalScore = select(".hint__final-score");
+  if (numCorrect < 10) {
+    finalScore.html("0" + numCorrect);
+  }
+  if (numCorrect >= 10) {
+    finalScore.html(numCorrect);
+  }
+
+  firstHint = select(".hint-mid");
+  firstHint.removeClass("hint-mid");
+  firstHint.addClass("hint-top");
+}
+
+//dom animation and replacement
+function initDom() {
+  firstHint = select(".hint-mid");
+  secondHint = select(".hint-bttm");
+  if (firstHint != null && secondHint != null) {
+    //move position of hints
+    firstHint.removeClass("hint-mid");
+    firstHint.addClass("hint-top");
+    secondHint.removeClass("hint-bttm");
+    secondHint.addClass("hint-mid");
+
+    //change text and image on hint
+    secondTopText = select(".hint__toptxt-bttm");
+    secondTopText.html("Strike a pose");
+    document.getElementById("img-2").src =
+      "images/letters/" + randomLetter + ".svg";
+    secondBottomText = select(".hint__bottomtxt-bttm");
+    secondBottomText.html("for");
+    secondLetter = select(".hint__letter-bttm");
+    secondLetter.html(randomLetter);
+  }
+  //change letter and image
+}
+
+function gameDom() {
+  correctArrow = select(".correct__img");
+  correctArrow.removeClass("correct__img-init");
+
+  correctArrow.removeClass("correct__img-moveUp");
+  //check if it's odd
+  scoreText = select(".score__num");
+  if (numCorrect < 10) {
+    scoreText.html("0" + numCorrect);
+  }
+  if (numCorrect >= 10) {
+    scoreText.html(numCorrect);
+  }
+
+  //if odd
+  if (numCorrect % 2 == 1) {
+    firstHint = select(".hint-top");
+    secondHint = select(".hint-mid");
+
+    if (firstHint != null && secondHint != null) {
+      firstHint.removeClass("hint-top");
+      firstHint.addClass("hint-mid");
+      secondHint.removeClass("hint-mid");
+      secondHint.addClass("hint-top");
+
+      //change text and image on hint
+      firstTopText = select(".hint__toptxt-mid");
+      firstTopText.html("Strike a pose");
+      document.getElementById("img-1").src =
+        "images/letters/" + randomLetter + ".svg";
+      firstBottomText = select(".hint__bottomtxt-mid");
+      firstBottomText.html("for");
+      firstLetter = select(".hint__letter-mid");
+      firstLetter.html(randomLetter);
+    }
+  }
+  //check if it's even
+  else if (numCorrect % 2 == 0) {
+    firstHint = select(".hint-mid");
+    secondHint = select(".hint-top");
+    if (firstHint != null) {
+      firstHint.removeClass("hint-mid");
+      firstHint.addClass("hint-top");
+      secondHint.removeClass("hint-top");
+      secondHint.addClass("hint-mid");
+
+      //change text and image on hint
+      secondTopText = select(".hint__toptxt-bttm");
+      secondTopText.html("Strike a pose");
+      document.getElementById("img-2").src =
+        "images/letters/" + randomLetter + ".svg";
+      secondBottomText = select(".hint__bottomtxt-bttm");
+      secondBottomText.html("for");
+      secondLetter = select(".hint__letter-bttm");
+      secondLetter.html(randomLetter);
+    }
+  }
+  correctArrow.addClass("correct__img-moveUp");
 }
