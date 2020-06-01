@@ -28,7 +28,7 @@ letter_angle = {
 };
 
 function setup() {
-  createCanvas(windowHeight * 1.2, windowHeight * 0.9);
+  createCanvas(windowHeight * 1.4, windowHeight * 0.8);
   video = createCapture(VIDEO);
   video.size(width, height);
   video.hide();

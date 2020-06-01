@@ -1,3 +1,4 @@
+/* Webcam */
 #defaultCanvas0 {
     height: 40vw;
     width: 70vw;
@@ -19,23 +20,13 @@
     position: relative;
 }
 
-
-/* Webcam */
-.webcam__capture {
-    height: 40vw;
-    width: 70vw;
-    background-color: var(--white);
-    border-radius: var(--borderRadius);
-    box-shadow: var(--shadow);
-}
-
 /* Hint */
 
 .hint {
     position: absolute;
     height: 32vw;
     width: 15vw;
-    left: 8vw;
+    left: 5vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
