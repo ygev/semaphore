@@ -245,7 +245,7 @@ body {
     border-radius: var(--borderRadius);
     box-shadow: var(--shadow);
     position: absolute;
-    bottom: 50px;
+    bottom: -200px;
     width: 550px;
     height: 200px;
     right: 8vw;
@@ -339,4 +339,22 @@ body {
     border-bottom: 1px solid var(--purple);
     transition: border 100ms ease-in-out;
   }
+}
+
+/* Final Score */
+.hint__final-score {
+    font-size: 90px;
+}
+
+.hint__final-again {
+    margin-top: 24px;
+    font-size: 24px;
+    line-height: 26px;
+    border-bottom: 4px solid var(--purple);
+    transition: 150ms ease-in-out;
+}
+
+.hint__final-again:hover {
+    border-bottom: 4px solid var(--white);
+    transition: 150ms ease-in-out;
 }
