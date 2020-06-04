@@ -243,9 +243,6 @@ function handleEnd() {
     finalScore.html(numCorrect);
   }
 
-  firstHint = select(".hint-mid");
-  firstHint.removeClass("hint-mid");
-  firstHint.addClass("hint-top");
 }
 
 //dom animation and replacement
