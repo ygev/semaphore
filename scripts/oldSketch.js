@@ -1,31 +1,17 @@
-let posX = [0, 0, 0, 0, 0, 0];
-let posY = [0, 0, 0, 0, 0, 0];
-
-let lerpPosX = [];
-let lerpPosY = [];
-
 let diagramArray = [];
 
 let startTime;
 
 var gameStarted;
 
-var timeleft = 10;
+var timeleft = 20;
 
 let numCorrect = 0;
-
-let attachGif;
 
 console.log(gameStarted);
 
 let reset;
 
-let bigLetter;
-let logo;
-let instruction;
-let body;
-let countFlag;
-let countdowntimer;
 let leftAlphaAngle = [
   -135,
   -180,
@@ -52,7 +38,7 @@ let leftAlphaAngle = [
   45,
   45,
   135,
-  -45
+  -45,
 ];
 let rightAlphaAngle = [
   -90,
@@ -80,7 +66,7 @@ let rightAlphaAngle = [
   0,
   -45,
   0,
-  0
+  0,
 ];
 
 let errorLeftAngle = [135, -135, 135, -135];
@@ -112,7 +98,7 @@ let alphabet = [
   "W",
   "X",
   "Y",
-  "Z"
+  "Z",
 ];
 
 let gotPose = false;
@@ -120,44 +106,28 @@ let gotPose = false;
 let ierror = 0;
 
 let i = Math.floor(Math.random() * 26);
-while (i == 14 || i == 7 || i == 22 || i == 23 || i == 25) {
+while (i == 14 || i == 22 || i == 23 || i == 25) {
   i = Math.floor(Math.random() * 26);
 }
 
 function setup() {
-  createCanvas(windowHeight * 1.4, windowHeight);
+  createCanvas(windowHeight * 1.35, windowHeight);
   video = createCapture(VIDEO);
-  video.size(height * 1.4, height);
+  video.size(height * 1.35, height);
   video.hide();
   frameRate(60); // Attempt to refresh at starting FPS
 
   const poseNet = ml5.poseNet(video, modelLoaded);
   poseNet.on("pose", gotPoses);
-  bigLetter = select(".big-letter");
-  logo = select(".logo");
-  instruction = select(".instruction");
-  body = select("body");
-  countFlag = select(".countFlag");
   reset = select(".reset");
-  countdowntimer = select(".countdowntimer");
   reset.hide();
-
-  attachGif = false;
-
-  instruction.html(
-    "Wave your arms to start regaining your personal space. Get as many as you can in " +
-      timeleft +
-      " seconds!"
-  );
-  countFlag.html(numCorrect);
-  countdowntimer.html(timeleft);
 }
 
 function modelLoaded() {
   print("Model Loaded!");
   let options = {
     imageScaleFactor: 1,
-    minConfidence: 0.9
+    minConfidence: 0.9,
   };
   startTime = second();
 }
@@ -165,7 +135,7 @@ function modelLoaded() {
 function gotPoses(poses) {
   let options = {
     imageScaleFactor: 1,
-    minConfidence: 0.9
+    minConfidence: 0.9,
   };
 
   //print(poses);
@@ -217,6 +187,12 @@ function draw(poses) {
   //print("right: " + rightAngle);
   //verifyAngle(leftAngle, leftAlphaAngle, rightAngle, rightAlphaAngle, 4);
 
+  let bigLetter = select(".big-letter");
+  let logo = select(".logo");
+  let instruction = select(".instruction");
+  let body = select("body");
+  let countFlag = select(".countFlag");
+
   if (
     verifyAngle(leftAngle, errorLeftAngle, rightAngle, errorRightAngle, ierror)
   ) {
@@ -233,14 +209,12 @@ function draw(poses) {
     }
 
     instruction.html("Strike a pose!");
-    if (attachGif == false) {
-      document.getElementById("diagram").src = "img/" + alphabet[i] + ".svg";
-    }
-    var downloadTimer = setInterval(function() {
+    document.getElementById("diagram").src = "imgOld/" + alphabet[i] + ".svg";
+    var downloadTimer = setInterval(function () {
       //console.log(deltaTime);
 
       timeleft -= 1 / frameCount;
-      countdowntimer.html(round(timeleft));
+      document.getElementById("countdowntimer").textContent = round(timeleft);
       if (timeleft <= 0) clearInterval(downloadTimer);
     }, 1000);
 
@@ -248,6 +222,7 @@ function draw(poses) {
       timeleft = 0;
     }
 
+    //master mind code
     if (
       verifyAngle(leftAngle, leftAlphaAngle, rightAngle, rightAlphaAngle, i) &&
       timeleft > 0
@@ -260,29 +235,14 @@ function draw(poses) {
       element.classList.add("correct");
 
       i = Math.floor(Math.random() * 26);
-      while (i == 14 || i == 7 || i == 22 || i == 23 || i == 25) {
+      while (i == 14 || i == 22 || i == 23 || i == 25) {
         i = Math.floor(Math.random() * 26);
       }
     } else if (timeleft == 0) {
-      instruction.html(
-        "Congratulations!" + "<br>" + "You got " + numCorrect + " signals"
-      );
-
+      print("end");
+      instruction.html("Congratulations! You got " + numCorrect + " signals");
       reset.show();
       bigLetter.hide();
-      body.removeClass("blueBackground");
-      body.style(
-        "background",
-        "linear-gradient(360deg, #00b897 0%, #00800d 65%)"
-      );
-      if (attachGif == false) {
-        print("here");
-        print(document.getElementById("diagram").src);
-        document.getElementById("diagram").src = "img/win.gif";
-        print(document.getElementById("diagram").src);
-        attachGif = true;
-      }
-      print(document.getElementById("diagram").src);
     }
   } else {
     gameStarted = false;
@@ -315,3 +275,16 @@ function getLeftAngle(posX, posY) {
 function getRightAngle(posX, posY) {
   return (Math.atan2(posY[1] - posY[5], posX[1] - posX[5]) * 180) / Math.PI;
 }
+
+function getRandLetter() {
+  let i = Math.floor(Math.random() * 26);
+  while (i == 14 || i == 22 || i == 23 || i == 25) {
+    i = Math.floor(Math.random() * 26);
+  }
+}
+
+letter_angle = {
+  A: [-135, -90],
+  B: [-180, -90],
+  C: [135, -90],
+};
