@@ -20,7 +20,7 @@
   
 **Say No More! is an award-winning AI game that aims to teach more people about flag-based maritime communication.**
 
-It was initially created using the [ml5.js](https://ml5js.org/) library and the [poseNet()](https://ml5js.org/reference/api-PoseNet/) pose-recognition model by [Amanda Yeh](https://amandayeh.com) and [Yana Gevorgyan](yg.is) during a hackathon, and later refined in early 2020 as a full-fledged game.
+It was initially created using the [ml5.js](https://ml5js.org/) library and the [poseNet()](https://ml5js.org/reference/api-PoseNet/) pose-recognition/pose-estimation model by [Amanda Yeh](https://amandayeh.com) and [Yana Gevorgyan](yg.is) during a hackathon, and later refined in early 2020 as a fully-fledged game.
 
 🏆 Winner at UMBC Hackathon 2019
 
