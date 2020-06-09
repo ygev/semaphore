@@ -20,7 +20,7 @@
   
 **Say No More! is an award-winning AI game that aims to teach more people about flag-based maritime communication.**
 
-It was initially created using the [ml5.js](https://ml5js.org/) library and the [poseNet()](https://ml5js.org/reference/api-PoseNet/) pose-recognition model by [Amanda Yeh](https://amandayeh.com) and [Yana Gevorgyan](yg.is) during the UMBC 2019 hackathon, and later refined in early 2020 as a full-fledged game.
+It was initially created using the [ml5.js](https://ml5js.org/) library and the [poseNet()](https://ml5js.org/reference/api-PoseNet/) pose-recognition model by [Amanda Yeh](https://amandayeh.com) and [Yana Gevorgyan](yg.is) during a hackathon, and later refined in early 2020 as a full-fledged game.
 
 🏆 Winner at UMBC 2019 Hackathon
 
@@ -28,7 +28,7 @@ It was initially created using the [ml5.js](https://ml5js.org/) library and the 
 1. Load the [game](https://ygev.github.io/semaphore).
 2. Press **Start Game**.
 3. Place your laptop on a tall surface and make sure your body is fully in the shot.
-4. Make sure the model can recognize your arms. If you see the white outlines that track your arms' movements, you're set.
+4. Ensure that the model recognizes your arms. If you see white outlines tracking your arms' movements, you're set.
 5. **Wave your arms, as per the card with the stick figure, to start the game.**
 6. **Try to imitate the poses that the game prompts you with! Get as many as you can in 20 seconds.**
   <img src="demo-1.gif" alt="Semaphore Demo">
