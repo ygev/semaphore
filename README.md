@@ -22,7 +22,7 @@
 
 It was initially created using the [ml5.js](https://ml5js.org/) library and the [poseNet()](https://ml5js.org/reference/api-PoseNet/) pose-recognition model by [Amanda Yeh](https://amandayeh.com) and [Yana Gevorgyan](yg.is) during a hackathon, and later refined in early 2020 as a full-fledged game.
 
-🏆 Winner at UMBC 2019 Hackathon
+🏆 Winner at UMBC Hackathon 2019
 
 ### How to Play Semaphore
 1. Load the [game](https://ygev.github.io/semaphore).
