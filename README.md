@@ -3,8 +3,11 @@
 <br>
   <h1 align="center">Say No More: Semaphore!</h1>
   <h2 align="center">Teaching flag-signaling with a pose-recognition game.</h2>
- <p align="center">
-</p>
+  <p align="center">
+    <a href="https://ygev.github.io/semaphore">
+      <img src="https://i.imgur.com/mnJjuLJ.png" width="200" alt="Try Out Semaphore!">
+    </a>
+  </p>
   <p align="center">
 <a href="mailto:ygis@mit.edu">
       <img src="https://img.shields.io/badge/Contact-ygev-blue.svg?style=flat" alt="Contact">
@@ -15,7 +18,12 @@
   </p>
 </h1>
 
-[Try it Out](https://ygev.github.io/semaphore) · [Read About It on My Site](https://yg.is/semaphore)
-
+  <p align="center">
+      <img src="demo-1.gif" alt="Semaphore Demo">
+  </p>
+  
 Say No More! is an award-winning AI game that aims to teach more people about flag-based maritime communication. 
 Winner at UMBC 2019 Hackathon 🏆
+
+  
+[Read More on My Site](https://yg.is/semaphore)
