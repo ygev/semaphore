@@ -1,11 +1,11 @@
 <h1 align="center">
-  <img align="center" src="https://i.imgur.com/KedEuYI.png" width="300" alt="icon">
+  <img align="center" src="header.png" width="300" alt="icon">
 <br>
   <h1 align="center">Say No More: Semaphore!</h1>
   <h2 align="center">Teaching flag-signaling with a pose-recognition game.</h2>
   <p align="center">
     <a href="https://ygev.github.io/semaphore">
-      <img src="https://i.imgur.com/mnJjuLJ.png" width="200" alt="Try Out Semaphore!">
+      <img src="button.png" width="200" alt="Try Out Semaphore!">
     </a>
   </p>
   <p align="center">
